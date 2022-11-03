@@ -16,7 +16,7 @@ function NavBar() {
             <Nav.Link href="/about">About</Nav.Link>
             <NavDropdown title="Account" id="basic-nav-dropdown">
               <NavDropdown.Item href="/signup">Sign up</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
+              <NavDropdown.Item href="/forgotpassword">
                 Forgot Password
               </NavDropdown.Item>
               <NavDropdown.Divider />

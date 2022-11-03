@@ -22,4 +22,9 @@ router.get('/about', function(req, res, next) {
   res.send(message);
 });
 
+router.get('/forgotpassword', function(req, res, next) {
+  const message = "Forgot password";
+  res.send(message);
+});
+
 module.exports = router;
