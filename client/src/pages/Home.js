@@ -15,7 +15,8 @@ function Home() {
 
     return (
     <div>
-    <NavBar />
+      <NavBar />
+      <div className='pageStyle'>
       <h1>Project Home {message}</h1>
       <Link to={'./login'}>
         <button variant="raised">
@@ -27,6 +28,7 @@ function Home() {
             Sign Up
         </button>
       </Link>
+      </div>
     </div>
     );
 }
