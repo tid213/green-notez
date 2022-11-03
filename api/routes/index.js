@@ -8,7 +8,17 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/login', function(req, res, next) { 
-  const message = "Login or Sign up"
+  const message = "Login or Sign up";
+  res.send(message);
+});
+
+router.get('/signup', function(req, res, next) {
+  const message = "Sign up for Green Notez";
+  res.send(message);
+});
+
+router.get('/about', function(req, res, next) {
+  const message = "About page";
   res.send(message);
 });
 

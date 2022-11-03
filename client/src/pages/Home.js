@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-
+import NavBar from '../components/NavBar';
 import { Link } from 'react-router-dom';
 
 
@@ -14,11 +14,17 @@ function Home() {
       });
 
     return (
-    <div className="App">
+    <div>
+    <NavBar />
       <h1>Project Home {message}</h1>
       <Link to={'./login'}>
         <button variant="raised">
             Login
+        </button>
+      </Link>
+      <Link to={'./signup'}>
+        <button variant="raised">
+            Sign Up
         </button>
       </Link>
     </div>
