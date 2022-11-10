@@ -22,8 +22,24 @@ router.get('/signup', function(req, res, next) {
   const message = "Sign up for Green Notez";
   res.send(message);
 });
-router.post('/signup', (req, res, next) => {
-  console.log(req.body);
+router.post('/signup', async (req, res, next) => {
+  const email = req.body.email;
+  const pass = req.body.password;
+
+  //const { data, error } = 
+  const { error } = await supabase.auth.signUp({
+    email: email,
+    password: pass,
+  });
+
+  if (error) {
+    console.log(JSON.stringify(error));
+  } else {
+    res.redirect('/login');
+  }
+
+  console.log(email);
+  console.log(pass);
 })
 
 router.get('/about', function(req, res, next) {
