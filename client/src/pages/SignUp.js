@@ -21,7 +21,7 @@ function SignUp() {
       };
       const handleSubmit = (event) => {
         // prevents the submit button from refreshing the page
-        event.preventDefault();
+        //event.preventDefault();
       axios
         .post("http://localhost:9000/signup/", formInfo)
         .then(() => console.log('Data Sent'))

@@ -19,6 +19,7 @@ function App() {
           <Route exact path='/about' element={About()}/>
           <Route exact path='/forgotpassword' element={ForgotPassword()}/>
           <Route exact path='/dashboard' element={Dashboard()}/>
+          <Route exact path='logout' />
         </Routes>
       </div>
   );

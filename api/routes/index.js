@@ -25,12 +25,14 @@ router.post('/login', async (req, res, next) => {
     email: email,
     password: pass,
   });
-  console.log(data);
+  
   if (error) {
     console.log(JSON.stringify(error));
+    console.log(error.status);
+    res.send(error);
   } else {
-    console.log("Reached this point");
-    return res.redirect('/dashboard');
+    //res.send(message);
+    res.send(data);
   }
 })
 
@@ -65,9 +67,11 @@ router.get('/forgotpassword', function(req, res, next) {
   res.send(message);
 });
 
-router.get('/dashboard', function(req, res, next) {
-  const message = "You are signed in"
-  res.send(message);
+router.get('/dashboard', async (req, res, next) => {
+  const { data, error } = await supabase.auth.getSession();
+  console.log(data);
+    const message = "You are signed in"
+    res.send(message);
 });
 router.get('/signout', async (req, res, next) => {
   const { error } = await supabase.auth.signOut()

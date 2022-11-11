@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import axios from 'axios';
 
 function LogIn() {
     const [message, setMessage] = useState();
     const [formInfo, setFormInfo] = useState({email: "", password: ""});
+    const [inputError, setInputError] = useState("");
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -20,11 +22,14 @@ function LogIn() {
       };
       const handleSubmit = (event) => {
         // prevents the submit button from refreshing the page
-        //event.preventDefault();
+        event.preventDefault();
         axios
         .post("http://localhost:9000/login/", formInfo)
         .then(function (response) {
           console.log(response);
+          if (response){
+            navigate("/dashboard");
+          }
         })
         .catch(function (error) {
           console.log(error);
@@ -36,7 +41,8 @@ function LogIn() {
       <div>
         <NavBar />
         <h1>{message}</h1>
-        <form method='POST' onSubmit={handleSubmit}>
+        <p>{inputError}</p>
+        <form onSubmit={handleSubmit}>
             <label>
               Email:
               <input type="text" name="email" value={formInfo.email} onChange={handleChange} />
