@@ -17,6 +17,22 @@ router.get('/login', function(req, res, next) {
   const message = "Login or Sign up";
   res.send(message);
 });
+router.post('/login', async (req, res, next) => {
+  const email = req.body.email;
+  const pass = req.body.password;
+
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email: email,
+    password: pass,
+  });
+  console.log(data);
+  if (error) {
+    console.log(JSON.stringify(error));
+  } else {
+    console.log("Reached this point");
+    return res.redirect('/dashboard');
+  }
+})
 
 router.get('/signup', function(req, res, next) {
   const message = "Sign up for Green Notez";
@@ -37,9 +53,6 @@ router.post('/signup', async (req, res, next) => {
   } else {
     res.redirect('/login');
   }
-
-  console.log(email);
-  console.log(pass);
 })
 
 router.get('/about', function(req, res, next) {
@@ -51,5 +64,14 @@ router.get('/forgotpassword', function(req, res, next) {
   const message = "Forgot password";
   res.send(message);
 });
+
+router.get('/dashboard', function(req, res, next) {
+  const message = "You are signed in"
+  res.send(message);
+});
+router.get('/signout', async (req, res, next) => {
+  const { error } = await supabase.auth.signOut()
+  res.redirect('/');
+})
 
 module.exports = router;

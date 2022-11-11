@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import LogIn from './pages/LogIn';
 import SignUp from './pages/SignUp';
 import About from './pages/About';
+import Dashboard from './pages/Dashboard';
 import ForgotPassword from './pages/ForgotPassword';
 import { Routes, Route } from 'react-router-dom';
 import { AccordionButton } from 'react-bootstrap';
@@ -17,6 +18,7 @@ function App() {
           <Route exact path='/signup' element={SignUp()}/>
           <Route exact path='/about' element={About()}/>
           <Route exact path='/forgotpassword' element={ForgotPassword()}/>
+          <Route exact path='/dashboard' element={Dashboard()}/>
         </Routes>
       </div>
   );
