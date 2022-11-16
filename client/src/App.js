@@ -3,6 +3,7 @@ import './App.css';
 import Home from './pages/Home';
 import LogIn from './pages/LogIn';
 import SignUp from './pages/SignUp';
+import SignOut from './pages/SignOut';
 import About from './pages/About';
 import Dashboard from './pages/Dashboard';
 import ForgotPassword from './pages/ForgotPassword';
@@ -19,7 +20,7 @@ function App() {
           <Route exact path='/about' element={About()}/>
           <Route exact path='/forgotpassword' element={ForgotPassword()}/>
           <Route exact path='/dashboard' element={Dashboard()}/>
-          <Route exact path='logout' />
+          <Route exact path='/signout' element={SignOut()} />
         </Routes>
       </div>
   );

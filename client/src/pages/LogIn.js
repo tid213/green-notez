@@ -6,16 +6,16 @@ import NavBar from '../components/NavBar';
 import axios from 'axios';
 
 function LogIn() {
-    const [message, setMessage] = useState();
+    const [message, setMessage] = useState("");
     const [formInfo, setFormInfo] = useState({email: "", password: ""});
     const [inputError, setInputError] = useState("");
     const navigate = useNavigate();
-
+    console.log("login loaded");    
     useEffect(() => {
         fetch("http://localhost:9000/login/")
             .then(res => res.text())
             .then(res => setMessage(res));
-      });
+      }, []);
 
       const handleChange = (event) => {
         setFormInfo({ ...formInfo, [event.target.name]: event.target.value });
@@ -34,7 +34,7 @@ function LogIn() {
         .catch(function (error) {
           console.log(error);
         });
-        setFormInfo({name: "", email: ""});
+        //setFormInfo({name: "", email: ""});
       };
 
     return (

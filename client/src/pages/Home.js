@@ -2,32 +2,22 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import NavBar from '../components/NavBar';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 function Home() {
-    const [message, setMessage] = useState();
-
-    useEffect(() => {
-        fetch("http://localhost:9000/")
-            .then(res => res.text())
-            .then(res => setMessage(res));
-      });
-
+  const navigate = useNavigate();
     return (
     <div>
       <NavBar />
       <div className='pageStyle'>
-      <h1>Project Home {message}</h1>
-      <Link to={'./login'}>
-        <button variant="raised">
+      <h1>Project Home</h1>
+      <button variant="raised" onClick={() => navigate('/login')}>
             Login
-        </button>
-      </Link>
-      <Link to={'./signup'}>
-        <button variant="raised">
+            </button>
+      <button variant="raised" onClick={() => navigate('/signup')}>
             Sign Up
-        </button>
-      </Link>
+      </button>
       </div>
     </div>
     );

@@ -7,18 +7,42 @@ var cors = require("cors");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var testAPIRouter = require("./routes/testAPI");
+var session = require('express-session');
+//var RedisStore = require('connect-redis')(session); 
+
+//const { createClient } = require("redis")
+//let redisClient = createClient({ legacyMode: true })
+//redisClient.connect().catch(console.error)
+
+// creating 24 hours from milliseconds
+const oneDay = 1000 * 60 * 60 * 24;
+var corsOptions = {
+  credentials: true
+}
+
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-
+app.use(cors({
+  credentials: true,
+}));
 app.use(logger('dev'));
 app.use(express.json());
-app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+//session middleware
+app.use(session({
+  secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
+  saveUninitialized:true,
+  cookie: { 
+    path    : '/',
+    httpOnly: false,
+    maxAge: oneDay },
+    resave: false
+}));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -27,6 +51,7 @@ app.use("/testAPI", testAPIRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
 
 // error handler
 app.use(function(err, req, res, next) {
