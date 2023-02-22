@@ -1,0 +1,741 @@
+:root {
+  --success-color: #4CBB17;
+}
+
+.btn-success{
+  background-color: var(--success-color);
+  --bs-btn-color: #fff;
+    --bs-btn-bg: #4CBB17;
+    --bs-btn-border-color: #4CBB17;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #4CBB17;
+    --bs-btn-hover-border-color: #4CBB17;
+    --bs-btn-focus-shadow-rgb: 60,153,110;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #4CBB17;
+    --bs-btn-active-border-color: #4CBB17;
+    --bs-btn-active-shadow: inset 0 3px 5pxrgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #4CBB17;
+    --bs-btn-disabled-border-color: #4CBB17;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-color: white;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+p{
+  margin: 0;
+}
+.page{
+  position: absolute;
+  z-index: -1;
+}
+
+.header-logo{
+  display: flex;
+  font-family: 'Ubuntu', sans-serif;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+
+.navbar-div{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  border-radius: 5px;
+  
+}
+.nav-icon{
+  margin-top: 1rem;
+  margin-right: 1rem;
+  
+}
+.navbar-div img{
+  width: 24px;
+  height: 24px;
+}
+
+.navbar-div-expand{
+  position: fixed;
+  z-index: 9999;
+}
+.nav-options{
+  font-family: 'PT Sans', sans-serif;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  margin-top: .5rem;
+  margin-left: 10.25rem;
+  width: 210px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border: 1.5px solid black;
+  background: white;
+}
+.nav-option1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  color: black;
+}
+.nav-option2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  color: black;
+}
+.nav-option3{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  color: black;
+}
+.nav-option-special{
+  font-family: 'Nunito', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 3px solid #4CBB17;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 3rem;
+  color: black;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.navbar-username{
+  font-family: 'Nunito', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 3px solid #4CBB17;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 3rem;
+  color: black;
+  font-size: 1.25rem;
+  font-weight: 500;
+
+}
+
+.postForm{
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  width: 400px;
+}
+
+.form-label{
+  margin-bottom: 0;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #4CBB17;
+  appearance: none;
+  border-radius: .375rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.google-signin{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  color: black;
+  width: 100%;
+  font-family: 'Nunito', sans-serif;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+}
+
+.google-signin img{
+  width: 50px;
+  height: 50px;
+}
+
+.dashboard{
+  display: flex;
+  flex-direction: column;
+}
+.footer{
+  color: #104d30;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.homePage{
+  display: flex;
+  flex-direction: column;
+  margin-top: 40%;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding-bottom: 1rem;
+}
+
+.homePageTitle{
+  color: #4CBB17;
+  padding: 1rem 1rem;
+  font-family: 'Nunito', sans-serif;
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.homePageInfo{
+  padding: .5rem;
+  font-family: 'PT Sans', sans-serif;
+  color: black;
+  padding-bottom: 1rem;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.homePageButtons{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.homePageSignIn{
+  padding-left: 2rem;
+
+}
+.homePageSignIn button{
+  padding: .5rem 2rem;
+}
+.homePageSignUp{
+  padding-right: 2rem;
+}
+.homePageSignUp button{
+  padding: .5rem 2rem;
+}
+
+.signInTitle{
+  color: white;
+  display: flex;
+  font-weight: 500;
+  justify-content: center;
+  margin-left: auto;
+  margin-bottom: 2rem;
+  background-color: #198754;
+  border-bottom-left-radius: 20px;
+  
+  width: fit-content;
+  padding: .5rem 1.5rem;
+}
+
+.dashboardTitle{
+  color: white;
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 2rem;
+}
+
+.dashboard-buttons{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dashboard-form{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tileLayout{
+  display: flex;
+
+}
+
+
+.add-note-button{
+  text-align: center;
+  background: #4CBB17;
+  color: white;
+  display: flex;
+  font-weight: 500;
+  width: auto;
+  margin-left: .5rem;
+  margin-right: .5rem;
+  margin-top: .5rem; 
+  align-items: center;
+  justify-content: center;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  border-radius: 10px;
+  animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.add-grow-button{
+  background: white;
+  border: solid thin #4CBB17;
+  font-family: 'Nunito', sans-serif;
+  color: black;
+  display: flex;
+  width: 125px;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.add-grow-button img{
+  width: 24px;
+  height: 24px;
+}
+
+.add-grow-form{
+  position: absolute;
+  top: 4rem;
+  right: 3rem;
+  width: 300px;
+  padding: .5rem;
+  border-radius: 15px;
+  background: white;
+  border: 1.5px solid black;
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  z-index: 9999;
+}
+.add-grow-form img{
+  padding: 0;
+}
+.show-grow-card{
+  position: absolute;
+  top: 4rem;
+  right: 1rem;
+  width: 350px;
+  padding: .5rem 2rem 1rem 2rem;
+  border-radius: 15px;
+  background: black;
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  box-shadow: 0px 0px 25px 5px #5dc97e;
+  z-index: 999;
+}
+.add-grow-form h3{
+  font-family: 'Nunito', sans-serif;
+}
+.edit-grow-form{
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  width: 350px;
+  padding: .5rem 2rem 1rem 2rem;
+  border-radius: 15px;
+  color: black;
+  border: 1.5px solid black;
+  background: white;
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  z-index: 999;
+}
+.edit-grow-form h3{
+  font-family: 'Nunito', sans-serif;
+}
+
+.close-button{
+  text-align: end;
+  margin: 0;
+  padding-right: .5rem;
+  padding-top: .25rem;
+}
+
+.growTiles{
+  font-family: 'Nunito', sans-serif;
+  background: #4CBB17;
+  display: flex;
+  flex-direction: column;
+  width: 125px;
+  padding-bottom: .5rem;
+  margin-top: .75rem;
+  margin-bottom: .5rem;
+  margin-left: auto;
+  border-radius: 10px;
+  
+}
+.growTiles-selected{
+  background: #4CBB17;
+  display: flex;
+  flex-direction: column;
+  width: 125px;
+  padding-bottom: .5rem;
+  margin-top: .75rem;
+  margin-bottom: .5rem;
+  margin-left: auto;
+  border-radius: 10px;
+  border: 1.5px solid black;
+}
+
+.grow-tiles{
+  margin-left: auto;  
+  margin-right: 1rem;
+}
+.addNote {
+  
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.addNoteExpand{
+  background-color: #198754;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 1rem;
+}
+.addNote img{
+  max-width: 24px;
+}
+
+.note-tiles{
+  margin-top: 0;
+}
+
+.add-note-form{
+  padding-left: .75rem;
+  padding-right: .75rem;
+}
+.edit-note-form{
+  color: black;
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  left: 3rem;
+  width: 300px;
+  border-radius: 15px;
+  background: white;
+  border: 1.5px solid black;
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  padding-bottom: 1rem;
+  z-index: 999;
+}
+
+.edit-note-form p{
+  padding-bottom: .5rem;
+}
+
+.edit-note-info p{
+  padding-left: .5rem;
+  padding-right: .5rem;
+  padding-bottom: .5rem;
+}
+.noteDiv{
+  color: black;
+  position: absolute;
+  top: 4rem;
+  right: 0rem;
+  left: 3rem;
+  width: 300px;
+  border-radius: 15px;
+  background: white;
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  border: 1.5px solid black;
+  padding-bottom: 1rem;
+  z-index: 999;
+}
+
+.note-dropdown{
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: .5rem;
+}
+.note-dropdown h3{
+  padding-bottom: .5rem;
+}
+
+.growInfo{
+  color: white;
+  margin: auto;  
+  padding-top: 1rem;
+  padding-bottom: .25rem;
+}
+
+.profileForm{
+  color: black;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: .25rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: .5rem;
+  padding-top: .5rem;
+  border: 2px solid #4CBB17;
+  border-radius: 10px;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.profileForm h5{
+  padding-bottom: .5rem;
+}
+.page-header{
+  font-family: 'Nunito', sans-serif;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: .5rem;
+  justify-content: center;
+  width: fit-content;
+  color: black;
+  margin-top: 20%;
+}
+
+.grow-manager{
+  color: black;
+  width: 300px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-top: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: .5rem;
+  padding-top: .5rem;
+  border-radius: 21px;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.grow-period-options img{
+  max-width: 2.5rem;
+  max-height: 2.5rem;
+  margin: .25rem;  
+  padding: 3px
+}
+
+
+.add-note-load{
+  background: white;
+  font-family: 'Nunito', sans-serif;
+  border-radius: 10px;
+  color: black;
+  width: 200px;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  border: solid thin #4CBB17;
+  z-index: 999;
+}
+
+.grow-notes{
+  position: relative; 
+}
+
+
+.noteTile{
+  font-family: 'Nunito', sans-serif;
+  background: rgba(76, 187, 23, 1);
+  border-radius: 10px;
+  color: white;
+  width: 200px;
+  margin-top: .25rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  border: 1.5px solid black;
+}
+
+.noteTitle{
+  margin: 0;
+  padding-top: .25rem;
+  width: fit-content;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto; 
+
+}
+.noteComment {
+  margin-top: 0rem;
+  min-height: 3rem;
+  padding: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(76, 187, 23, 1);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top: thin solid #ade4be;
+
+}
+
+.noteInfo{
+  padding-top: .25rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-weight: 500;
+}
+.noteInfoR-L{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.noteFooter{
+  padding-top: .0;
+}
+.grow-manager-title{
+  padding-bottom: 1rem;
+}
+.grow-manager-dropdown{
+  padding-bottom: 1rem;
+}
+.delete-warning{
+  
+  padding: .5rem 2rem 2rem 2rem;
+  border-radius: 15px;
+  background: white;
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  box-shadow: 0px 0px 25px 10px red;
+  z-index: 999; 
+}
+.warning-buttons{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.yes-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2rem;
+  border: thin solid black;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+.yes-button p{
+  padding: 0;
+}
+.no-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: thin solid black;
+  background-color: #4CBB17;
+  color: white;
+  border-radius: 10px;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+.no-button p{
+  padding: 0;
+}
+
+.grow-manage-options{
+  position: absolute;
+  top: 10rem;
+  padding: .5rem;
+  right: 1.5rem;
+  width: 350px;
+  border-radius: 15px;
+  color: black;
+  background: white;
+  border: 2px solid black;
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  z-index: 999; 
+}
+
+
+.grow-manage-buttons{
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: .5rem;
+  font-weight: 600;
+}
+.grow-manage-buttons img{
+  background-color: #4CBB17;
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid black;
+}
